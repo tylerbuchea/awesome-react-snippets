@@ -19,9 +19,9 @@ These snippets include all the different types of component structures you might
 ```javascript
 import React from 'react';
 
-export default class | extends React.Component {
+export default class $ extends React.Component {
   render() {
-    return ( | );
+    return ( $ );
   }
 }
 ```
@@ -31,9 +31,9 @@ export default class | extends React.Component {
 ```javascript
 import React from 'react';
 
-export default class | extends React.PureComponent {
+export default class $ extends React.PureComponent {
   render() {
-    return ( | );
+    return ( $ );
   }
 }
 ```
@@ -43,8 +43,8 @@ export default class | extends React.PureComponent {
 ```javascript
 import React from 'react';
 
-export default function |() {
-  return ( | );
+export default function $() {
+  return ( $ );
 }
 ```
 
@@ -53,8 +53,8 @@ export default function |() {
 ```javascript
 import React from 'react';
 
-export default React.memo(function |() {
-  return ( | );
+export default React.memo(function $() {
+  return ( $ );
 });
 ```
 
