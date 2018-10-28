@@ -1,247 +1,67 @@
-# Simple React Snippets
+# Awesome React Snippets
 
-The essential collection of React Snippets and commands.
-
-![snippets in action](images/snippets-in-action.gif)
-
-## Features
-
-Only what you need and nothing more. **No Redux. No React Native.**
-
-Simply, simple React snippets.
-
-These snippets were selected carefully from my own day-to-day React use. Not
-everything in React is included here. This is a hand selected set of snippets
-that work the way that you would expect, not just a copy of the documentation.
+These snippets include all the different types of component structures you might want to use including the new [React.memo](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactmemo) or "Memoized" React function component.
 
 ## Snippets
 
-| Snippet | Renders                          |
-| ------- | -------------------------------- |
-| `imr`   | Import React                     |
-| `imrc`  | Import React / Component         |
-| `impt`  | Import PropTypes                 |
-| `impc`  | Import React / PureComponent     |
-| `cc`    | Class Component                  |
-| `ccc`   | Class Component With Constructor |
-| `sfc`   | Stateless Function Component     |
-| `cdm`   | componentDidMount                |
-| `cwm`   | componentWillMount               |
-| `cwrp`  | componentWillReceiveProps        |
-| `gds`   | getDerivedStateFromProps         |
-| `scu`   | shouldComponentUpdate            |
-| `cwu`   | componentWillUpdate              |
-| `cdu`   | componentDidUpdate               |
-| `cwu`   | componentWillUpdate              |
-| `cdc`   | componentDidCatch                |
-| `gsbu`  | getSnapshotBeforeUpdate          |
-| `ss`    | setState                         |
-| `ssf`   | Functional setState              |
-| `ren`   | render                           |
-| `rprop` | Render Prop                      |
-| `hoc`   | Higher Order Component           |
+| Snippet | Renders                           |
+| ------- | --------------------------------- |
+| `rc`    | React Component                   |
+| `rpc`   | React PureComponent               |
+| `rfc`   | React Function Component          |
+| `rfcm`  | React Function Component Memoized |
+| `rp`    | React PropTypes                   |
 
 ## Full Expansions
 
-### imr - Import React
+### rc - React Component
 
 ```javascript
 import React from 'react';
-```
 
-### imrc - Import React, Component
-
-```javascript
-import React, { Component } from 'react';
-```
-
-### impt - Import PropTypes
-
-```javascript
-import PropTypes from 'prop-types';
-```
-
-### impc - Import PureComponent
-
-```javascript
-import React, { PureComponent } from 'react';
-```
-
-### cc - Class Component
-
-```javascript
-class | extends Component {
-  state = { | },
+export default class | extends React.Component {
   render() {
     return ( | );
   }
 }
-
-export default |;
 ```
 
-### ccc - Class Component With Constructor
+### rpc - React PureComponent
 
 ```javascript
-class | extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { | };
-  }
+import React from 'react';
+
+export default class | extends React.PureComponent {
   render() {
     return ( | );
   }
 }
-
-export default |;
 ```
 
-### sfc - Stateless Function Component
+### rfc - React Function Component
 
 ```javascript
-const | = props => {
+import React from 'react';
+
+export default function |() {
   return ( | );
-};
-
-export default |;
-```
-
-### cdm - componentDidMount
-
-```javascript
-componentDidMount() {
-  |
 }
 ```
 
-### cwm - componentWillMount
+### rfcm - React Function Component Memoized
 
 ```javascript
-//WARNING! To be deprecated in React v17. Use componentDidMount instead.
-componentWillMount() {
-  |
-}
-```
+import React from 'react';
 
-### cwrp - componentWillReceiveProps
-
-```javascript
-//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
-componentWillReceiveProps(nextProps) {
-  |
-}
-```
-
-### gds - getDerivedStateFromProps
-
-```javascript
-static getDerivedStateFromProps(nextProps, prevState) {
-  |
-}
-```
-
-### scu - shouldComponentUpdate
-
-```javascript
-shouldComponentUpdate(nextProps, nextState) {
-  |
-}
-```
-
-### cwu - componentWillUpdate
-
-```javascript
-//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
-componentWillUpdate(nextProps, nextState) {
-  |
-}
-```
-
-### cdu - componentDidUpdate
-
-```javascript
-componentDidUpdate(prevProps, prevState) {
-  |
-}
-```
-
-### cwun - componentWillUnmount
-
-```javascript
-componentWillUnmount() {
-  |
-}
-```
-
-### cdc - componentDidCatch
-
-```javascript
-componentDidCatch(error, info) {
-  |
-}
-```
-
-### gsbu - getSnapshotBeforeUpdate
-
-```javascript
-getSnapshotBeforeUpdate(prevProps, prevState) {
-  |
-}
-```
-
-### ss - setState
-
-```javascript
-this.setState({ | : | });
-```
-
-### ssf - Functional setState
-
-```javascript
-this.setState(prevState => {
-  return { | : prevState.| }
+export default React.memo(function |() {
+  return ( | );
 });
 ```
 
-### ren - render
+### rp - React PropTypes
 
 ```javascript
-render() {
-  return (
-    |
-  );
-}
-```
-
-### rprop - Render Prop
-
-```javascript
-class | extends Component {
-  state = { | },
-  render() {
-    return this.props.render({
-      |: this.state.|
-    });
-  }
-}
-
-export default |;
-```
-
-### hoc - Higher Order Component
-
-```javascript
-function | (|) {
-  return class extends Component {
-    constructor(props) {
-      super(props);
-    }
-
-    render() {
-      return < | {...this.props} />;
-    }
-  };
-}
+import PropTypes from 'prop-types';
 ```
 
 ## Commands
@@ -253,13 +73,3 @@ to run multiple times on any document. No text needs to be selected as the
 command is executed on the entire document.
 
 ![React: class to className](https://i.imgur.com/i1ZwvOu.gif)
-
-## Thank You! ❤️
-
-Special thanks to the following individuals who have helped with this project in
-some way.
-
-- [@dan_abramov](https://twitter.com/dan_abramov)
-- [@adiun](https://twitter.com/adiun)
-- [@will-stone](https://github.com/will-stone)
-- [@blurbye](https://github.com/blurbyte)
